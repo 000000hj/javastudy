@@ -129,12 +129,12 @@ public class MainWrapper {
   }
   
   public static void ex05() {
-    // 월에 따른 계절
-    // 3 ~ 5 : 봄
-    // 6 ~ 8 : 여름
-    // 9 ~ 11: 가을
-    // 12 ~ 2: 겨울
-    int month = 7;
+    // 월에 따른 계절           월%12
+    // 3 ~ 5 : 봄                3~5
+    // 6 ~ 8 : 여름              6~8
+    // 9 ~ 11: 가을              9~11
+    // 12 ~ 2: 겨울              0~2
+    int month = 12;
     String season;  // "봄", "여름", "가을", "겨울"
     
     if(month>2&&month<=5)season="봄";
@@ -143,6 +143,7 @@ public class MainWrapper {
     else season="겨울";
       System.out.println(month+"월은 "+season+"입니다");
   }
+
   
   public static void ex06() {
     // 월에 따른 분기
@@ -160,35 +161,47 @@ public class MainWrapper {
     System.out.println(" 입니다");
     
   }
+  public static void ex06_2() {
+    // 월에 따른 분기
+    // 1 ~ 3 : 1분기    분기계산
+    // 4 ~ 6 : 2분기    (month-1)/3+1
+    // 7 ~ 9 : 3분기      
+    // 10 ~ 12 : 4분기
+    int month = 7;
+    System.out.println((month-1)/3+1+"분기");
+    
+   
+    
+  }
   
   public static void ex07() {
     //10일 후 요일은?
     int day = 13;  // 13일은 목요일
-    int nDay = 10;  // 10일
+    int nDay = 2;  // 10일
     String weekname;  // "월", "화", "수", "목", "금", "토", "일"
     
     
     switch ((day+nDay)%7) {
     case 0:
-      weekname="목";
-      break;
-    case 1:
       weekname="금";
       break;
-    case 2:
+    case 1:
       weekname="토";
       break;
-    case 3:
+    case 2:
       weekname="일";
       break;
-    case 4:
+    case 3:
       weekname="월";
       break;
-    case 5:
+    case 4:
       weekname="화";
       break;
+    case 5:
+      weekname="수";
+      break;
      default:
-       weekname="수";
+       weekname="목";
        break;
     }
     System.out.println(nDay+"일후는 "+weekname+"요일 입니다.");
@@ -200,12 +213,21 @@ public class MainWrapper {
   
   public static void ex08() {
     // 대소문자 변환 (구글링으로 아스키코드 검색 후 참고)
-    char ch = 'A';  // 임의의 대문자 또는 소문자
-    System.out.print("대문자:"+ch+",");
-    ch='A'+32;   //A는65,a는97 정도는 기억하자
-    System.out.println("소문자"+ch);
+    char ch = 't';  // 임의의 대문자 또는 소문자
+    
+    if(ch>='A'&&ch<='Z') {
+      ch+=32;   //A는65,a는97 정도는 기억하자
+    }
+    else if(ch>='a'&&ch<='z') {
+      ch-=32;  
+    }
+    
+    
+    System.out.println(ch);
     
   }
+  
+  
   public static void main(String[] args) 
   {
    
@@ -214,7 +236,9 @@ public class MainWrapper {
     ex03();
     ex04();
     ex05();
+   
     ex06();
+    ex06_2();
     ex07();
     ex08();
   }
