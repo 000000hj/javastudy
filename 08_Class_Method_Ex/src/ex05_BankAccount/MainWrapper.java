@@ -5,8 +5,8 @@ public class MainWrapper {
   public static void main(String[] args) {
   
     
-    Bank bank = new Bank("국민은행가산지점", "02-111-1111");
-    bank.info();  // 국민은행가산지점(02-111-1111)
+   Bank bank = new Bank("국민은행가산지점", "02-111-1111");
+   // bank.info();  // 국민은행가산지점(02-111-1111)
 
     BankAccount acc = new BankAccount(bank, "012-34-56789", 50000);
     acc.info();  // 계좌번호: 012-34-56789, 통장잔액: 50000원
