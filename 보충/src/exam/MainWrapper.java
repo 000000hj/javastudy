@@ -364,6 +364,20 @@ public class MainWrapper {
 		
 		
 	 System.out.println(gift);
+	 
+	 
+	/* switch(score/10) {
+	  case 10:
+	  case 9: gift+="냄비";
+	  case 8: gift+="식칼";
+	  case 7: gift+="도마"; 
+	  case 6: gift+="행주";
+	  default:gift+="꽝";
+	  }
+	 System.out.println(gift);*/
 	}
+	
+	
+	
 
 }
