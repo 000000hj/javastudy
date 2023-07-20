@@ -265,6 +265,11 @@ public class MainWrapper {
 		int begin = 1;
 		int end = 6;
 		int total = 0;
+		for(int n=begin;n<=end;n++)
+		{
+		  total=total+n;
+		}
+		System.out.println(begin+"부터"+end+"사이 모든 정수의 평균은"+(total/((end-begin)+1.0))+"입니다.");
 		
 	}
 	
@@ -273,7 +278,15 @@ public class MainWrapper {
 	// 모든 3의 배수 합은 1683입니다.
 	public static void q11() {
 		int total = 0;
-		
+		int target=3;
+		for(int n=1;n<=100;n++)
+		{
+		  if(n%target==0)
+		  {
+		    total =total+n;
+		  }
+		}
+		System.out.println("모든"+target+"의 배수의 합은"+total+"입니다.");
 	}
 	
 	// q12. 배열에 저장된 모든 정수를 모두 더하시오.
@@ -283,7 +296,24 @@ public class MainWrapper {
 	public static void q12() {
 		int total = 0;
 		int[] a = {1, -1, -2, 2, 3, -3};
+		/*	for(int i=0;i<a.length;i++)
+		{
+		  if(a[i]<0) {
+		    continue;
+		  }
+		  
+		  total=total+a[i];
+		}
+		System.out.println("합계는"+total+"입니다.");
+		*/
 		
+		total=0;
+		for(int n:a) {
+		  if(n>0) {
+		    total=total+n;
+		  }
+		}
+		System.out.println("합계는"+total+"입니다.");
 	}
 	
 	// q13. 제시된 배열 a에 상수 TARGET과 동일한 문자가 몇 개 포함되어 있는지 갯수를 구해서 출력하시오.
@@ -292,7 +322,15 @@ public class MainWrapper {
 	public static void q13() {
 		final char TARGET = 'h';
 		char[] a = {'a', 'h', 'e', 'h', 'p'};
+		int cnt=0;
 		
+		for(int i=0;i<a.length;i++)
+		{
+		  if(a[i]==TARGET) {
+		    cnt++;
+		  }
+		}
+		System.out.println("배열에 포함된"+TARGET+"는"+cnt+"개입니다.");
 	}
 	
 	// q14. 점수에 따라 가져갈 수 있는 모든 사은품을 출력하시오.
@@ -304,7 +342,27 @@ public class MainWrapper {
 	// 행주도마
 	public static void q14() {
 		String strScore = "75";
+		int score=Integer.parseInt(strScore);
+		String gift="";
+		if(score>=60)
+		{
+		  gift+="행주"; 
+		}
+		if(score>=70)
+		{
+		  gift+="도마";
+		}
+		if(score>=80)
+		{
+		  gift+="식칼";
+		}
+		if(score>=90)
+		{
+		  gift+="냄비";
+		}
 		
+		
+	 System.out.println(gift);
 	}
 
 }
