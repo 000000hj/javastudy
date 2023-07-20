@@ -344,6 +344,7 @@ public class MainWrapper {
 		String strScore = "75";
 		int score=Integer.parseInt(strScore);
 		String gift="";
+		//String gift=null; // null 이 출력됨(즉 문자열 연결하고 싶으면 null쓰지말아야함)
 		if(score>=60)
 		{
 		  gift+="행주"; 
