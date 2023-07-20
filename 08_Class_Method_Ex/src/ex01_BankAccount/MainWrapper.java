@@ -9,7 +9,8 @@ public class MainWrapper {
     
     //계좌번호 객체에 등록하기
    my.setAccNo("123-456-7894-456");
-    
+   
+  
     //객체에 입금하기
     my.deposite(50000);
     
@@ -24,7 +25,15 @@ public class MainWrapper {
     
     //you 객체에 계좌번호 등록하기
     you.setAccNo("02-123-1234");
+    
+    
+    my.transfer(you,1000);
+    
+    my.inquiry();
+    you.inquiry();
+    
   }
+  
   
 
 }
