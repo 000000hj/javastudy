@@ -16,6 +16,7 @@ public class Bank {
     this.callNo=callNo;
   }
   
+<<<<<<< HEAD
   public Bank() {
    
   }
@@ -43,6 +44,10 @@ public class Bank {
   {
     return callNo;
   }
+=======
+  
+
+>>>>>>> f0891ee6e230d064536792a01829589913089aaa
 
 	public void info()
   {

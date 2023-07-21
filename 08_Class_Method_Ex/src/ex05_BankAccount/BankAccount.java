@@ -6,8 +6,11 @@ String acc;
 private Bank bank;
 private long balance;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f0891ee6e230d064536792a01829589913089aaa
 public BankAccount(Bank bank,String acc,long balance)
 {
 	this.bank=bank;
@@ -18,6 +21,7 @@ public BankAccount(Bank bank,String acc,long balance)
 	public BankAccount(long balance) {
 	this.balance=balance;
 }
+<<<<<<< HEAD
 	
 	public BankAccount() {
     
@@ -97,5 +101,12 @@ public BankAccount(Bank bank,String acc,long balance)
 	}
 
   
+=======
+	public void info()
+	{
+		System.out.println("계좌번호:"+acc+", 통장잔액:"+balance+"원");
+		bank.info();
+	}
+>>>>>>> f0891ee6e230d064536792a01829589913089aaa
   
 }
