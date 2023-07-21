@@ -5,13 +5,13 @@ public class BankMember {
 	
 	private String name;
 	private BankAccount bankAcc;
-<<<<<<< HEAD
 
 
 	
   public BankMember() {
     
   }
+  
 	public BankMember(String name,BankAccount bankAcc)
 	{
 		this.name=name;
@@ -63,23 +63,10 @@ public class BankMember {
 	 bankAcc.info();
 		
 	}
-=======
->>>>>>> f0891ee6e230d064536792a01829589913089aaa
 
 	
 
-	public BankMember(String name,BankAccount bankAcc)
-	{
-		this.name=name;
-		this.bankAcc=bankAcc;
-		
-	}
 
-	public void info()
-	{
-		System.out.println("고객명:"+name);
-	 bankAcc.info();
-		
-	}
+
  
 }

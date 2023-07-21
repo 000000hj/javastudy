@@ -6,11 +6,11 @@ public class MainWrapper {
   
     
    Bank bank = new Bank("국민은행가산지점", "02-111-1111");
-<<<<<<< HEAD
+
     bank.info();  // 국민은행가산지점(02-111-1111)
-=======
+
    // bank.info();  // 국민은행가산지점(02-111-1111)
->>>>>>> f0891ee6e230d064536792a01829589913089aaa
+
 
     BankAccount acc = new BankAccount(bank, "012-34-56789", 50000);
     acc.info();  // 계좌번호: 012-34-56789, 통장잔액: 50000원

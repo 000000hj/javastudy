@@ -6,12 +6,14 @@ public class Driver {
   private int career;
   private boolean bestDriver;
   
+  
   public void setName(String name)
   {
     this.name=name;
   }
   public void setCareer(int career) {
     this.career=career;
+    
   }
   public void setBestDriver(boolean bestDriver) {
   this.bestDriver=bestDriver;
