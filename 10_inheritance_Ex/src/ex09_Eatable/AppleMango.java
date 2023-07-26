@@ -1,0 +1,11 @@
+package ex09_Eatable;
+
+public class AppleMango extends Food implements Eatable {
+
+  public AppleMango(String name) {
+    super(name); // 슈퍼클래스의 생성자 호출 public Food(String name){} 호출
+    
+  }
+
+  
+}
