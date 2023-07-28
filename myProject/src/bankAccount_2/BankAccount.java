@@ -37,6 +37,8 @@ public class BankAccount {
   
  //메소드
   
+  
+  //이체  
   public void transfer(BankAccount acc,long money)
   {
     acc.deposite(withdrawal(money));
@@ -50,7 +52,7 @@ public class BankAccount {
       retVal=money;
     }
     
-    return money;
+    return retVal;
   }
   
   public void deposite(long money) {
@@ -65,7 +67,8 @@ public class BankAccount {
   public void info()
   {
     System.out.println("계좌번호:"+acc+", 통장잔액:"+balance+"원");
-    System.out.print("개설지점:");bank.info();
+    System.out.print("개설지점:");
+    bank.info();
   }
   
   

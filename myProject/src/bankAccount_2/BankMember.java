@@ -37,16 +37,16 @@ public class BankMember {
 
 public void transfer(BankMember member, long money)
 {
-  
+  member.deposiste(withdrawal(money));
 }
 
-public void deposiste()
+public void deposiste(long money)
 {
-  
+  acc.deposite(money);
 }
 
-public void withdrawal() {
-  
+public long withdrawal(long money) {
+  return acc.withdrawal(money);
 }
   
   

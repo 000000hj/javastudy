@@ -34,7 +34,7 @@ public class MainWrapper {
     
     
   //이체
-    member2.transfer(member1,1000);//2가 1한테 이체한다.
+    member2.transfer(member1,100);//2가 1한테 이체한다.
     member1.info();
     member2.info();
     

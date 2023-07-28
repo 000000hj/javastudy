@@ -68,7 +68,7 @@ public class MainWrapper {
     System.out.println(arm.next());//순서 없으니까 팔 집어넣고 잡히는거 하나 꺼내
     
     System.out.println(arm.hasNext());
-    System.out.println(arm.next());
+    System.out.println(arm.next());//
     
     System.out.println(arm.hasNext());
     System.out.println(arm.next());
@@ -78,7 +78,7 @@ public class MainWrapper {
     
     System.out.println(arm.hasNext());
     */
-    while(arm.hasNext())
+    while(arm.hasNext())//잡히는게 있음 꺼내라
     {
       System.out.println(arm.next());
     }
