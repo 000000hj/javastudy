@@ -37,3 +37,4 @@ public static void main(String[]args)
   System.out.println(new SimpleDateFormat("yy/MM/dd E HH:mm:ss").format(date));
  }
 }
+

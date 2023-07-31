@@ -32,7 +32,7 @@ public class MainWrapper {
     
    System.out.println("나이를 입력하세요");
     int age=sc.nextInt();
-    System.out.println("입력된 이름:"+age);
+    System.out.println("입력된 나이:"+age);
     
     
     System.out.println("키를 입력하세요");

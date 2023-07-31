@@ -39,6 +39,7 @@ public class Ex06_LocalDateTime {
     
     //특정시간
     LocalTime time2=LocalTime.of(15,25,30);//15시 25분 30초
+    System.out.println(time2);
     
     //문자열 시간 처리
     LocalTime time3 = LocalTime.parse("14:25:30");//기본 패턴 HH:mm:ss
@@ -52,7 +53,7 @@ public class Ex06_LocalDateTime {
     
     //특정 날짜와 시간
     LocalDateTime dateTime2=LocalDateTime.of(2023, 7,31,15,25,30);
-    
+    System.out.println(dateTime2);
     //문자열 형식의 날짜와 시간
     LocalDateTime dateTime3=LocalDateTime.parse("2023-07-31T15:28:30");
     System.out.println(dateTime3);
