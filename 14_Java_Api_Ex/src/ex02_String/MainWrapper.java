@@ -73,13 +73,39 @@ public class MainWrapper {
   public static void ex04() {
     String personalId = "141212-3345678";
     Calendar cal=Calendar.getInstance();//현재날짜,시간
+   
     
-    //퍼스널 아이디 년도 분리
-    String year=personalId.substring(0,2);
-    //LocalDate birth = 
-  
-   //System.out.println(birth);
-    System.out.println("나이:"+ cal.get(Calendar.YEAR));
+    
+
+    //퍼스널 아이디 생년월일 추출
+    String birth=personalId.substring(0,6);
+    LocalDate lc=LocalDate.parse(birth,DateTimeFormatter.ofPattern("yyMMdd"));
+    
+    
+    //퍼스널 아이디 성별 추출
+    String gender=""; //성별 담을 변수
+    String s=personalId.substring(7,8); //성별 나타내는 숫자만 잘라
+    int num=Integer.parseInt(s); //string->int
+    
+    for(int i=1;i<=4;i++)
+    {
+       gender=(num%2==0)?"여자":"남자";
+    }
+   
+   
+    
+    //현재 날짜 연도만 추출
+    System.out.println("나이:"+(cal.get(Calendar.YEAR)-(lc.getYear())));
+    System.out.println("성별:"+gender);
+    System.out.println((cal.get(Calendar.YEAR)-(lc.getYear()))+"살 "+gender+"입니다.");
+    
+ 
+    
+
+    
+
+   
+    
     
   }
   
@@ -91,6 +117,21 @@ public class MainWrapper {
   //   문자열 입력 >>> 역삼역
   //   역삼역 : 거꾸로 읽어도 역삼역입니다.
   public static void ex05() {
+    Scanner scan= new Scanner(System.in);
+   String s=scan.next();
+    
+    
+    
+    if(s.substring(0,1).equals(s.substring(s.length()-1)))
+    {
+      System.out.println("거꾸로 읽어도 "+s+"입니다.");
+    }
+    else
+    {
+      System.out.println("거꾸로 읽으면 "+s+"과 다릅니다.");
+    }
+    
+    
     
   }
   
@@ -98,8 +139,8 @@ public class MainWrapper {
     //ex01();
      // ex02();
      //ex03();
-     ex04();
-   // ex05();
+     //ex04();
+      ex05();
   }
 
 }

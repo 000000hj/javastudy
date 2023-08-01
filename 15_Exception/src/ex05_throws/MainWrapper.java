@@ -2,7 +2,7 @@ package ex05_throws;
 
 public class MainWrapper {
   /*
-   * throws
+   * ★throws★
    * 1. 메소드에서 발생하는 모든 예외를 던질 때 사용한다.
    * 2. 메소드 내부에서 try-catch를 처리하지 않고, 메소드를 호출하는 곳으로 예외를 던질 때 사용한다.
    * 3. 메소드를 호출하는 곳에서 try-catch를  처리한다.

@@ -63,6 +63,7 @@ public long withdrawal(long money) {
  * 내 계좌에서 출금을 먼저 수행하고, 출금된 금액만큼 다른 계좌로 입금한다.
  * @param acc 다른계좌
  * @param money 이체할 금액
+ * 
  */
 public void transfer(BankAccount acc ,long money)
 {
