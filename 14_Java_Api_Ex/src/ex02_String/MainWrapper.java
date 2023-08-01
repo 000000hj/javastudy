@@ -2,6 +2,10 @@ package ex02_String;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -68,11 +72,14 @@ public class MainWrapper {
   // 9살 남자입니다.
   public static void ex04() {
     String personalId = "141212-3345678";
-    Date date =new Date();
-    SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+    Calendar cal=Calendar.getInstance();//현재날짜,시간
+    
+    //퍼스널 아이디 년도 분리
+    String year=personalId.substring(0,2);
+    //LocalDate birth = 
   
-   
-    System.out.println("나이:"+  sdf.format(personalId));
+   //System.out.println(birth);
+    System.out.println("나이:"+ cal.get(Calendar.YEAR));
     
   }
   
