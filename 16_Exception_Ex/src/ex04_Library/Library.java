@@ -35,18 +35,73 @@ public class Library {
   /**
    * 삭제 <br>
    */
-  private void deleteBook() {
+  private void deleteBook() throws RuntimeException{
+    System.out.println("===삭제===");
+    if(books.isEmpty())
+    {
+      throw new RuntimeException("도서관에 등록된 책이 없습니다.");
+    }
+    System.out.println("삭제할 책의 제목 입력 >>>");
+    String title=sc.next();
     
-    
-    //books.remove();
+    if(title.isEmpty()) {
+      throw new RuntimeException("삭제할 책의 제목이 입력되지 않았습니다.");
+    }
+    //객체 기반 삭제(동일 객체를 찾아 삭제)
+    //동일 객체인지 비교하기 위해서는 Book 클래스에 equals 메소드가 오버라이드 되어 있어야 한다.
+    for(Book book : books) {
+      if(title.equals(book.getTitle())) {
+        books.remove(book);
+        System.out.println(book+"책이 삭제되었습니다.");
+        return;
+      }
+    }
+    //입력된 제목을 가진 책이 없을  때 여기
+    System.out.println(title+"제목을 가진 책이 없습니다.");
   }
+
   
   
   /**
    * 수정 <br>
    */
-  private void modifyBook() {
+  private void modifyBook() throws RuntimeException,InputMismatchException{
+    System.out.println("===편집===");
     
+    if(books.isEmpty())
+    {
+      throw new RuntimeException("도서관에 등록된 책이 없습니다.");
+    }
+    System.out.println("편집할 책의 제목을 입력 >>>");
+    String title =sc.next();
+    if(title.isEmpty())
+    {
+      throw new RuntimeException("편집할 책의 제목이 입력되지 않았습니다.");
+    }
+    for(Book book : books)
+    {
+      if(title.equals(book.getTitle()))
+      {
+        /* System.out.println("수정할 책 제목 입력 >>>");
+        title=sc.next();
+        
+        if(title.isEmpty())
+        {
+          throw new RuntimeException("수정할 책의 제목이 입력되지 않았습니다.");
+        }
+        book.setTitle(title);*/
+
+       
+      System.out.println("수정할 책 가격 입력 >>>");
+        int price=sc.nextInt();
+        book.setPrice(price);
+        
+        
+        System.out.println(title+"책의 가격이"+price+" 원 으로 수정 되었습니다");
+        return;
+      }
+    }
+    System.out.println(title+"제목을 가진 책이 없습니다.");
   }
   
   
@@ -54,8 +109,28 @@ public class Library {
    * 조회 <br>
    */
   
-  private void queryBook() {
+  private void queryBook() throws RuntimeException{
     
+   if(books.isEmpty())
+   {
+     throw new RuntimeException("도서관에 등록된 책이 없습니다.");
+   }
+   
+   System.out.println("조회할 책의 제목 입력>>>");
+   String title=sc.next();
+  if(title.isEmpty())
+  {
+    throw new RuntimeException("책의 제목이 입력되지 않았습니다.");
+  }
+  for(Book book:books)
+  {
+    if(title.equals(book.getTitle())) {
+      System.out.println(book);
+      return;
+      }
+ 
+  }
+    System.out.println(title+"제목을 가진 책이 없습니다.");
   }
   
   /**
