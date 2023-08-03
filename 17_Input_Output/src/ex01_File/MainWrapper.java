@@ -17,7 +17,7 @@ public class MainWrapper {
    * 경로 작성 방법
    * 1. 윈도우 : 백슬래시(\),Java에서 백슬래시 입력하는 방법 (\\)
    * 2. 리눅스 : 슬래시(/)
-   * 3. java.io.File 클래스에는 플랫폼에 따라서 졍로 구분자를 자동으로 바꿔주는 separator 필드 값이 있다.
+   * 3. java.io.File 클래스에는 플랫폼에 따라서 경로 구분자를 자동으로 바꿔주는 separator 필드 값이 있다.
    */
   
   public static void ex01()
