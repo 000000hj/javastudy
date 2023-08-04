@@ -109,7 +109,7 @@ public class MainWrapper {
     System.out.println((cal.get(Calendar.YEAR)-(lc.getYear()))+"살 "+gender+"입니다.");
     
  
-    
+    //얘도 틀렸어 다시풀어
 
     
 
@@ -140,7 +140,7 @@ public class MainWrapper {
       System.out.println("거꾸로 읽으면 "+s+"과 다릅니다.");
     }
     //틀렸다
-    
+    //실행해볼때 테스트케이스를 좀더 섬세히 확인해!
     
     
     
