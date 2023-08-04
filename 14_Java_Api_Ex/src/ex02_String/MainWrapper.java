@@ -1,5 +1,7 @@
 package ex02_String;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -17,6 +19,7 @@ public class MainWrapper {
   // String param = "titleId=758037&no=112&weekday=mon";            // 물음표(?) 이후 문자열만 추출
   public static void ex01() {
     String url = "https://comic.naver.com/webtoon/detail?titleId=758037&no=112&weekday=mon";
+  
     String requestURI = "";
     String param = "";
     
@@ -37,8 +40,8 @@ public class MainWrapper {
     String fileName = "";
     String extName = "";
     
-    fileName=fullName.substring(0,fullName.indexOf("."));
-    extName=fullName.substring(fullName.indexOf(".")+1);
+    fileName=fullName.substring(0,fullName.lastIndexOf("."));
+    extName=fullName.substring(fullName.lastIndexOf(".")+1);
     System.out.println(fileName);
     System.out.println(extName);
     
@@ -54,14 +57,20 @@ public class MainWrapper {
     String beforeName = "";  // 변환 전 파일명
     String afterName = "";   // 변환 후 파일명
     Scanner scan=new Scanner(System.in);
+    /*
+    BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
+   System.out.println("변환 전 파일명 >>>");
+    beforeName=reader.readLine(); //예외처리 안해서 빨간줄 나옴.
+    */
     beforeName=scan.next();
-    
     
     //.의 위치 찾아
     afterName=beforeName.replace(".", "_");
     afterName+=String.valueOf(System.currentTimeMillis())+ beforeName.substring((beforeName.indexOf(".")));
     System.out.println(afterName);
     
+    
+
     
   }
   
@@ -92,7 +101,7 @@ public class MainWrapper {
        gender=(num%2==0)?"여자":"남자";
     }
    
-   
+   //1,2는 1900년대 3,4 는 2000년대라는 조건 생각해야지!
     
     //현재 날짜 연도만 추출
     System.out.println("나이:"+(cal.get(Calendar.YEAR)-(lc.getYear())));
@@ -130,6 +139,9 @@ public class MainWrapper {
     {
       System.out.println("거꾸로 읽으면 "+s+"과 다릅니다.");
     }
+    //틀렸다
+    
+    
     
     
     
@@ -138,7 +150,7 @@ public class MainWrapper {
   public static void main(String[] args) {
     //ex01();
      // ex02();
-     //ex03();
+    // ex03();
      //ex04();
       ex05();
   }

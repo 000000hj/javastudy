@@ -1,9 +1,16 @@
 package ex01_Scanner;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class MainWrapper {
   
+  
+  public static Scanner sc=new Scanner(System.in);
   // 문제1. Scanner 클래스의 next() 메소드를 이용해서 사용자로부터 문자열을 계속 입력 받는다.
   // 사용자가 "exit" 문자열을 입력하면 더 이상 입력 받지 않는다.
   // 총 몇 번만에 종료되었는지 그 횟수를 마지막에 출력한다.
@@ -13,16 +20,15 @@ public class MainWrapper {
   // 2번만에 exit가 입력되었다.
   public static void ex01() {
     
-    Scanner scan= new Scanner(System.in);
-    
-    int cnt=0;
+    //방법1
+  /*  int cnt=0;
     boolean istrue=true;
     String s="";
     String exit="exit";
     
     while(istrue) {
       
-      s=scan.next();
+      s=sc.next();
       cnt++;
       if(s.equals(exit))
       {
@@ -32,10 +38,19 @@ public class MainWrapper {
         
       }
       
+    }*/
+    
+ //방법2   
+    String str=null;
+    int count=0;
+    do {
+      System.out.println("문자열 입력>>>");
+      str =sc.next();
+      count++;
+      
+    }while(str.equalsIgnoreCase("exit")==false);
+   System.out.println(count+"번만에"+str+"가 입력되었다");
     }
-   
-        
-                                }
 
    
     
@@ -51,14 +66,15 @@ public class MainWrapper {
   // 대한민국의 수도는? >>> 서울
   // 정답입니다.
   public static void ex02() {
-    Scanner scan= new Scanner(System.in);
+  //방법1 
+    /*
     String s[]={"서울","seoul"};
     String answer="";
     boolean isWrong=true;
     while(isWrong)
     {
       System.out.println("대한민국의 수도는?");
-      answer=scan.next();
+      answer=sc.next();
       for(int i=0;i<2;i++)
       {
         if(s[i].equalsIgnoreCase(answer))
@@ -71,9 +87,42 @@ public class MainWrapper {
       System.out.println("오답입니다.");
       
     }
+    */
+ 
     
+    //방법2
+ /*   
+    String capital=null;
+    
+    do {System.out.println("대한민국의 수도는>>>>");
+    capital =sc.next();
+      if(capital !=null) {System.out.println("오답입니다.");}
+    } while (capital.equals("서울")==false&&capital.equals("seoul")==false);
+    System.out.println("정답입니다.");
+   */
+    
+    //방법3
+    
+   List<String>list=Arrays.asList("서울","seoul");
+   String capital=sc.next();
+   while(true)
+   {
+     System.out.println("대한민국의 수도는>>>>");
+     capital=sc.next();
+     if(list.contains(capital.toLowerCase())) {
+     System.out.println("정답입니다");
+     break;
+     }
+   
+   else {
+    System.out.println("오답");
+  }
+   }
     
   }
+    
+    
+    
   
   // 문제3. 평점 입력 받아서 해당 평점만큼 ★을 출력하시오.
   // 평점은 1 ~ 5 사이 정수로 입력 받는데, 벗어난 범위는 다시 입력 받는다.
@@ -84,7 +133,7 @@ public class MainWrapper {
   // ★★★
   public static void ex03() {
     
-    Scanner scan=new Scanner(System.in);
+   /* Scanner scan=new Scanner(System.in);
     int score=0;
     boolean retry=true;
     while(retry)
@@ -105,7 +154,21 @@ public class MainWrapper {
       }
 
       System.out.println();
+    }*/
+    
+    
+    
+    int grade=0;
+    do {
+      System.out.println("평점(1~5 입력>>>");
+      grade=sc.nextInt();
+    }while(grade<1||grade>5);
+    StringBuilder sb =new StringBuilder();
+    for(int n=0;n<grade;n++)//grade 만큼 반복
+    {
+      sb.append("★");
     }
+    System.out.println(sb.toString());
   }
   
   // 문제4. 비밀번호는 "1234"이다.
@@ -124,7 +187,7 @@ public class MainWrapper {
   // 성공
   public static void ex04() {
    
-    Scanner scan =new Scanner(System.in);
+ /*   Scanner scan =new Scanner(System.in);
     String password="1234";
     String userpass="";
     final int MAXCOUNT=5;
@@ -146,6 +209,21 @@ public class MainWrapper {
      }
      
     }
+    */
+    
+    final String PWD="1234";
+    String pwd=null;
+    for(int n=0;n<5;n++)
+    {
+      System.out.println("비밀번호>>>");
+      pwd=sc.next();
+      if(pwd.equals(PWD)) {
+        System.out.println("성공");
+        return;
+      }
+      else {}
+    }
+    System.out.println("실패");
   }
   
   // 문제5. 4계절이 저장되어 있는 영한 사전(2차원 배열)을 이용하여 문제를 해결하시오. 순서대로 한 번씩만 물어보는 방식으로 처리하시오.
@@ -178,11 +256,36 @@ public class MainWrapper {
     
   }
   
+  
+  public static void ex06() {
+    
+    
+    //HashMap과 ArrayList로 다시 풀기
+    
+    Map<String, String> map1 =new HashMap<String, String>();
+    map1.put("봄","spring");
+    
+    Map<String, String> map2 =new HashMap<String,String>();
+    map2.put("여름","spring");
+    
+    Map<String, String> map3 =new HashMap<String,String>();
+    map3.put("가을","spring");
+    
+    Map<String, String> map4 =new HashMap<String,String>();
+    map4.put("겨울","spring");
+    
+    List<Map<String, String>>dict=Arrays.asList(map1,map2,map3,map4);
+    
+    for(Map<String, String>map:dict) {
+      
+    }
+    
+  }
   public static void main(String[] args) {
-    ex01();
-    ex02();
-    ex03();
-    ex04();
+//    ex01();
+//    ex02();
+//    ex03();
+//    ex04();
     ex05();
   }
 
