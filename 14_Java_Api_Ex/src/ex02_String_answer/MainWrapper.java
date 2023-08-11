@@ -1,4 +1,4 @@
-package ex02_String;
+package ex02_String_answer;
 
 import java.time.LocalDate;
 import java.util.Scanner;

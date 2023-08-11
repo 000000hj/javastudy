@@ -16,7 +16,7 @@ public class Ex03_Binary_InputStream {
     // 웹 상의 바이너리 파일 읽기
     
     // 접속할 주소
-    String spec = "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png";
+    String spec = "https://t1.daumcdn.net/daumtop_chane/op/20200723055344399.png";
     
     // URL 객체 선언
     URL url = null;

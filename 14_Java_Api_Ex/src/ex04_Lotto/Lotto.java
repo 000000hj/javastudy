@@ -1,6 +1,8 @@
 package ex04_Lotto;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Lotto {
   
@@ -17,6 +19,7 @@ public class Lotto {
   public int buyLotto() {
     Scanner sc =new Scanner(System.in);
     int money=sc.nextInt();
+    sc.close();
     if(money<1000)
     {
       System.out.println(money+"원 Lotto 구매는 불가능합니다.");
@@ -25,7 +28,8 @@ public class Lotto {
     else if(money>100000)
     {
       System.out.println(money+"원 Lotto 구매는 불가능합니다.");
-      return money;
+     
+      return 0;
     }
     
     cnt=money/1000;
@@ -43,8 +47,12 @@ public class Lotto {
     int arr[][] = new int[100][100];//arr[cnt][num]
     int num=6;
     int count=1;
+    
     for(int i=0;i<cnt;i++)
     {
+      
+      
+     //중복 제거 하는걸로 고치기(중복 검사구문 혹은 set형변수에 집어넣어 꺼내는 방식으로)
      if(count==6)
      {
        System.out.println("----------------------------");
@@ -54,7 +62,7 @@ public class Lotto {
       //로또번호 삽입
       for(int j=0;j<num;j++)
       {
-        arr[i][j]=(int)(Math.random()*100+1);
+        arr[i][j]=(int)(Math.random()*45+1);
         System.out.print(String.format("%4d", arr[i][j]));
         
       }

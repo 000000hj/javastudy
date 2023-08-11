@@ -1,4 +1,4 @@
-package ex01_Scanner;
+package ex01_Scanner_answer;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;
